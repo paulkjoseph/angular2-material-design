@@ -1,0 +1,54 @@
+<div style="margin: 10px;">
+
+  <table style="width:100%">
+    <tr>
+      <td>
+        <paper-dropdown-menu label="Your favourite pastry">
+          <paper-listbox class="dropdown-content">
+            <paper-item>Croissant</paper-item>
+            <paper-item>Donut</paper-item>
+            <paper-item>Financier</paper-item>
+            <paper-item>Madeleine</paper-item>
+          </paper-listbox>
+        </paper-dropdown-menu>
+      </td>
+      <td>
+        <paper-button raised onclick="toast.open()">Persistent toast</paper-button>
+        <paper-toast id="toast" text="This toast will stay opened until you close it, or open another toast.">
+          <paper-button onclick="toast.toggle()" class="yellow-button">Close now!</paper-button>
+        </paper-toast>
+      </td>
+      <td>
+        <paper-button raised onclick="actions.open()">dialog with actions</paper-button>
+        <paper-dialog id="actions">
+          <h2>Dialog Title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="buttons">
+            <paper-button>More Info...</paper-button>
+            <paper-button dialog-dismiss>Decline</paper-button>
+            <paper-button dialog-confirm autofocus>Accept</paper-button>
+          </div>
+        </paper-dialog>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <md-divider></md-divider>
+  <vaadin-grid [items]="people" frozen-columns="2">
+    <table>
+      <colgroup>
+        <col name="firstName">
+        <col name="lastName">
+        <col name="email" width="250">
+        <col name="address.phone" hidable>
+        <col name="address.street" hidable>
+        <col name="address.city" hidable>
+        <col name="address.state" hidable>
+        <col name="address.zip" hidable>
+        <col name="address.country" hidable hidden>
+      </colgroup>
+    </table>
+  </vaadin-grid>
+  
+</div>

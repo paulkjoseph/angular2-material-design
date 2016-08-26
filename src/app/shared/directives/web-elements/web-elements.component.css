@@ -1,0 +1,8 @@
+vaadin-grid {
+    height: 60vh;
+}
+
+.yellow-button {
+    text-transform: none;
+    color: #eeff41;
+}

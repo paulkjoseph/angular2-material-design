@@ -1,0 +1,16 @@
+<datatable 
+    class="material" 
+    [rows]="rows" 
+    [options]="options"          
+    (onRowClick)='onRowClick($event)'>
+</datatable>
+<template #dataTmpl let-row="row" let-value="value" let-i="index">
+    <iron-label>{{ value }}</iron-label>
+</template>
+<template #actionTmpl let-row="row" let-value="value" let-i="index">
+    <div>
+        <button md-icon-button (click)="onDelete(value)" style="float:right;"><md-icon class="md-24">delete</md-icon></button>
+        <button md-icon-button (click)="onCreate(value)" style="float:right;"><md-icon class="md-24">create</md-icon></button>
+        <button md-icon-button (click)="onAdd(value)" style="float:right;" *ngIf="showAddActions"><md-icon class="md-24">add</md-icon></button>
+    </div>
+</template>

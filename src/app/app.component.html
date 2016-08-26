@@ -1,0 +1,136 @@
+<app>
+  <md-sidenav-layout fullscreen>
+    <md-sidenav align="start" class="md-sidenav-start" #sidenavstart>
+      <md-card>
+        <md-card-title-group>
+          <img md-card-sm-image src="http://placeimg.com/96/96/people/grayscale">
+          <md-card-title>Credentials</md-card-title>
+          <md-card-subtitle>user.credentials@email.com</md-card-subtitle>
+        </md-card-title-group>
+      </md-card>
+      <md-divider></md-divider>
+      <md-nav-list>
+        <h3 md-subheader>Menu 1</h3>
+        <md-divider></md-divider>
+        <a md-list-item>
+          <md-icon md-list-icon>add</md-icon>
+          <span md-line>Menu Item 1</span>
+        </a>
+        <md-divider></md-divider>
+        <a md-list-item>
+          <md-icon md-list-icon>add</md-icon>
+          <span md-line>Menu Item 2</span>
+        </a>
+        <md-divider></md-divider>
+        <a md-list-item>
+          <md-icon md-list-icon>add</md-icon>
+          <span md-line>Menu Item 3</span>
+        </a>
+        <md-divider></md-divider>
+        <h3 md-subheader>Menu 2</h3>
+        <md-divider></md-divider>
+        <a md-list-item>
+          <md-icon md-list-icon>add</md-icon>
+          <span md-line>Menu Item 1</span>
+        </a>
+        <md-divider></md-divider>
+        <a md-list-item>
+          <md-icon md-list-icon>add</md-icon>
+          <span md-line>Menu Item 2</span>
+        </a>
+        <md-divider></md-divider>
+      </md-nav-list>
+    </md-sidenav>
+
+    <md-sidenav align="end" class="md-sidenav-end" #sidenavend>
+      <md-tab-group>
+        <md-tab>
+          <template md-tab-label>Tab 1</template>
+          <template md-tab-content>
+            <md-card align="start" style="margin: 15px;">
+              <md-card-header>
+                  <img md-card-avatar src="http://placeimg.com/96/96/arch/grayscale">
+                  <md-card-title>Header title</md-card-title>
+                  <md-card-subtitle>Header subtitle</md-card-subtitle>
+              </md-card-header>
+              <img md-card-image src="http://placeimg.com/320/240/arch/grayscale">
+              <md-card-content>
+                  <p>Here is some more content</p>
+              </md-card-content>
+            </md-card>
+          </template>
+        </md-tab>
+        <md-tab>
+          <template md-tab-label>Tab 2</template>
+          <template md-tab-content>
+            <md-card align="start" style="margin: 15px;">
+              <md-card-subtitle>Subtitle first</md-card-subtitle>
+              <md-card-title>Card with title</md-card-title>   
+              <md-card-content>
+                    <p>This is supporting text.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do 
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
+              </md-card-content>
+              <md-card-actions>
+                    <button md-button>LIKE</button>
+                    <button md-button>SHARE</button>
+              </md-card-actions>
+            </md-card>
+          </template>
+        </md-tab>
+        <md-tab>
+          <template md-tab-label>Tab 3</template>
+          <template md-tab-content>
+            <md-card align="start" style="margin: 15px;">
+              <md-card-title-group>
+                  <img md-card-sm-image src="http://placeimg.com/160/120/nature/grayscale">
+                  <md-card-title>Card with title</md-card-title>
+                  <md-card-subtitle>Subtitle</md-card-subtitle>
+              </md-card-title-group>
+            </md-card>
+          </template>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+
+    <md-toolbar color="primary" fixed>
+      <button md-icon-button (click)="sidenavstart.open()"><md-icon>menu</md-icon></button> {{ title }}
+      <span class="fill-remaining-space"></span>
+      <button md-icon-button [md-menu-trigger-for]="menu">
+        <md-icon>more_vert</md-icon>
+      </button>
+      <md-menu #menu="mdMenu">
+        <button md-menu-item (click)="sidenavend.open()"> Settings </button>
+        <button md-menu-item> Refresh </button>
+        <button md-menu-item> Help </button>
+        <button md-menu-item> Sign Out </button>
+      </md-menu>
+      <i class="material-icons mdl-list__item-icon mdl-color--grey-50">person</i>
+      <span class="mdl-color-text--grey-50" style="padding-left:5px;">Logged User</span>
+    </md-toolbar>
+
+    <md-toolbar-row>
+      <md-tab-group>
+        <md-tab>
+          <template md-tab-label>Web Components</template>
+          <template md-tab-content>
+            <app-web-elements></app-web-elements>
+          </template>
+        </md-tab>
+        <md-tab>
+          <template md-tab-label>Angular2 Material</template>
+          <template md-tab-content>
+            <app-angular-material></app-angular-material>
+          </template>
+        </md-tab>
+        <md-tab>
+          <template md-tab-label>Angular2 Data Table</template>
+          <template md-tab-content>
+            <app-data-table></app-data-table>
+          </template>
+        </md-tab>
+      </md-tab-group>
+    </md-toolbar-row>
+
+  </md-sidenav-layout>
+</app>
